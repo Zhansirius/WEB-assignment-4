@@ -774,3 +774,19 @@ th a {
     color: #ffffff !important;
 }
 
+
+/* JavaScript Tasks */
+
+.js-tasks-section {
+    color: white;
+}
+
+#currentDateTime {
+    color: #ff6666;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#changeBackgroundBtn {
+    margin-top: 10px;
+}

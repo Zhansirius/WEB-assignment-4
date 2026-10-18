@@ -84,3 +84,57 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
+
+/* Task 4: Change Background Color */
+
+const changeBackgroundBtn = document.getElementById("changeBackgroundBtn");
+
+const backgroundColors = [
+    "#0b0b0b",
+    "#102a43",
+    "#243b2f",
+    "#3b243a",
+    "#302b1d"
+];
+
+let backgroundColorIndex = 0;
+
+if (changeBackgroundBtn) {
+    changeBackgroundBtn.addEventListener("click", function() {
+        backgroundColorIndex++;
+
+        if (backgroundColorIndex >= backgroundColors.length) {
+            backgroundColorIndex = 0;
+        }
+
+        document.body.style.backgroundColor =
+            backgroundColors[backgroundColorIndex];
+    });
+}
+
+
+/* Task 5: Display Current Date and Time */
+
+const currentDateTime = document.getElementById("currentDateTime");
+
+function updateDateTime() {
+    const now = new Date();
+
+    const formattedDate = new Intl.DateTimeFormat("en-US", {
+        month: "long",
+        day: "numeric",
+        year: "numeric",
+        hour: "numeric",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: true
+    }).format(now);
+
+    if (currentDateTime) {
+        currentDateTime.textContent = formattedDate;
+    }
+}
+
+updateDateTime();
+setInterval(updateDateTime, 1000);
